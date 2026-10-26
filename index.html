@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Ejercicios JavaScript RA2</title>
+    <title>Ejercicios JavaScript DWEC</title>
 </head>
-
 <body>
+    <h1>Ejercicios de JavaScript</h1>
+    <p>Selecciona un ejercicio y mira el resultado en la consola (F12).</p>
 
-    <h1>Ejercicios JavaScript RA2</h1>
+    <h2>Unidad 2</h2>
+    <p><a href="?ejercicio=2_1">Ejercicio 2.1</a></p>
+    <p><a href="?ejercicio=2_2">Ejercicio 2.2</a></p>
+    <p><a href="?ejercicio=2_3">Ejercicio 2.3</a></p>
+    <p><a href="?ejercicio=2_4">Ejercicio 2.4</a></p>
 
-    <h2>Ejercicio 2.1</h2>
-    <p>Datos de una película.</p>
+    <h2>Unidad 4</h2>
+    <p><a href="?ejercicio=4_1">Ejercicio 4.1</a></p>
+    <p><a href="?ejercicio=4_2">Ejercicio 4.2</a></p>
+    <p><a href="?ejercicio=4_3">Ejercicio 4.3</a></p>
+    <p><a href="?ejercicio=4_4">Ejercicio 4.4</a></p>
+    <p><a href="?ejercicio=4_5">Ejercicio 4.5</a></p>
+    <p><a href="?ejercicio=4_6">Ejercicio 4.6</a></p>
 
-    <h2>Ejercicio 2.2</h2>
-    <p>Alquiler de una película.</p>
-
-    <h2>Ejercicio 2.3</h2>
-    <p>Generación de identificadores AUR.</p>
-
-
-    <!-- Cargamos los ejercicios JavaScript -->
-
-    <script src="./Ejercicio_2_1/ra2_01.js"></script>
-
-    <script src="./Ejercicio_2_2/ra2_02.js"></script>
-
-    <script src="./Ejercicio_2_3/ra2_03.js"></script>
-
+    <script>
+        // Cargo solamente el ejercicio elegido para que no se mezclen las variables.
+        let ejercicio = new URLSearchParams(window.location.search).get("ejercicio");
+        let lista = ["2_1", "2_2", "2_3", "2_4", "4_1", "4_2", "4_3", "4_4", "4_5", "4_6"];
+        if (lista.includes(ejercicio)) {
+            let archivo = document.createElement("script");
+            archivo.src = "./DWEC_nico_ejercicios/ejercicio_" + ejercicio + ".js";
+            document.body.appendChild(archivo);
+        }
+    </script>
 </body>
-
 </html>
